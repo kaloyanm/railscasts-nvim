@@ -34,7 +34,27 @@ vim.opt.termguicolors = true
 
 LazyVim auto-imports every spec file in `lua/plugins/`. Put the plugin in
 `lua/plugins/theme.lua` (replacing the active theme) and point LazyVim's
-`colorscheme` option at it:
+`colorscheme` option at it.
+
+From GitHub:
+
+```lua
+return {
+  {
+    "kaloyanm/railscasts-nvim",
+    name = "railscasts",
+    priority = 1000,
+  },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "railscasts",
+    },
+  },
+}
+```
+
+From a local checkout (no clone required):
 
 ```lua
 return {
@@ -52,10 +72,8 @@ return {
 }
 ```
 
-`dir` loads the theme from a local checkout (no clone required). To install
-from GitHub instead, replace it with the repo URL, e.g.
-`"kaloyanm/railscasts-nvim"`. Keep only one file that sets
-`opts.colorscheme`, otherwise themes will fight over the active one.
+Keep only one file that sets `opts.colorscheme`, otherwise themes will fight
+over the active one.
 
 ### packer.nvim
 
